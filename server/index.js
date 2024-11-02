@@ -26,8 +26,10 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-	origin: '*', 
-  }));
+    origin: 'https://study-notion-mu-eight.vercel.app/',
+    methods: ['GET', 'POST'], 
+    credentials: true 
+}));
 app.use(
 	fileUpload({
 		useTempFiles: true,
