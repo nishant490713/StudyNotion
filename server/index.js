@@ -25,10 +25,15 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+const allowedOrigins = [
+    'https://study-notion-mu-eight.vercel.app',
+    'https://study-notion-mu-eight.vercel.app/'
+];
+
 app.use(cors({
-    origin: 'https://study-notion-mu-eight.vercel.app/',
-    methods: ['GET', 'POST'], 
-    credentials: true 
+    origin: allowedOrigins,
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true
 }));
 app.use(
 	fileUpload({
