@@ -27,7 +27,8 @@ app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
     'https://study-notion-mu-eight.vercel.app',
-    'https://study-notion-mu-eight.vercel.app/'
+    'https://study-notion-mu-eight.vercel.app/',
+	'*'
 ];
 
 app.use(cors({
